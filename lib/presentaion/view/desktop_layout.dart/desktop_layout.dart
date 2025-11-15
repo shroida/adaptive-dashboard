@@ -3,6 +3,7 @@ import 'package:adaptive_dashboard/presentaion/widgets/dashboard_card.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/drawer_menu.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/header_middle_widget.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/line_chart_widget.dart';
+import 'package:adaptive_dashboard/presentaion/widgets/mini_cards.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -61,10 +62,34 @@ class DesktopLayout extends StatelessWidget {
                           ],
                         ),
                       ),
-
+                      // ADDITIONAL STATS CARDS
+                      Row(
+                        children: [
+                          Expanded(
+                            child: MiniCard(
+                                title: "Conversion",
+                                value: "3.4%",
+                                icon: Icons.show_chart),
+                          ),
+                          SizedBox(width: 20),
+                          Expanded(
+                            child: MiniCard(
+                                title: "Active Users",
+                                value: "856",
+                                icon: Icons.people),
+                          ),
+                          SizedBox(width: 20),
+                          Expanded(
+                            child: MiniCard(
+                                title: "Bounce Rate",
+                                value: "42%",
+                                icon: Icons.trending_down),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 30),
                       SizedBox(height: 30),
 
-                      
                       Expanded(
                         flex: 2,
                         child: Row(
