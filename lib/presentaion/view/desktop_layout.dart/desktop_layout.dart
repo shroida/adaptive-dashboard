@@ -1,4 +1,5 @@
 import 'package:adaptive_dashboard/presentaion/widgets/drawer_menu.dart';
+import 'package:adaptive_dashboard/presentaion/widgets/header_middle_widget.dart';
 import 'package:flutter/material.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -21,10 +22,9 @@ class DesktopLayout extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 18.0, horizontal: 9.0),
                 child: Container(
                     decoration: const BoxDecoration(
-                      color: Color(0xFFF0F0F0), // Light Grey Card Background
+                      color: Color(0xFFF0F0F0),
                       borderRadius: BorderRadius.all(Radius.circular(25)),
                       boxShadow: [
-                        // Added Shadow
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 10,
@@ -36,36 +36,7 @@ class DesktopLayout extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(
                           horizontal: 25, vertical: 30),
                       child: const Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Team Overview',
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.w700),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.search),
-                                  SizedBox(
-                                    width: 25,
-                                  ),
-                                  Icon(
-                                    Icons.notifications,
-                                  ),
-                                  SizedBox(
-                                    width: 25,
-                                  ),
-                                  Icon(Icons.settings),
-                                  SizedBox(
-                                    width: 25,
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                        children: [HeaderMiddleWidget()],
                       ),
                     )),
               )),
