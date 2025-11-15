@@ -57,11 +57,13 @@ class DesktopLayout extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    "The Luhn algorithm (mod 10) is a simple checksum formula used to validate identification numbers, most famously credit card numbers. It ensures the number is not a random sequence of digits but doesn't check if the card is active or real.",
-                    style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
-                  ),
+                  child: const Center(
+                    child: Text(
+                      "SIDEBAR\n(Widgets & Charts)",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               )),
