@@ -1,3 +1,4 @@
+import 'package:adaptive_dashboard/presentaion/widgets/adaptive_layout.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatefulWidget {
@@ -10,6 +11,6 @@ class DashboardView extends StatefulWidget {
 class DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: );
+    return const Scaffold(body: AdaptiveLayout());
   }
 }
