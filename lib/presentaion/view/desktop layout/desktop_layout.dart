@@ -1,9 +1,9 @@
 import 'package:adaptive_dashboard/presentaion/widgets/bar_chart_widget.dart';
-import 'package:adaptive_dashboard/presentaion/widgets/dashboard_card.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/drawer_menu.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/header_middle_widget.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/line_chart_widget.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/mini_cards.dart';
+import 'package:adaptive_dashboard/presentaion/widgets/revenue_cards.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -46,21 +46,7 @@ class DesktopLayout extends StatelessWidget {
                     children: [
                       HeaderMiddleWidget(),
                       Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                                child: DashboardCard(
-                                    title: "Revenue", value: "\$12,345")),
-                            SizedBox(width: 20),
-                            Expanded(
-                                child: DashboardCard(
-                                    title: "Users", value: "1,234")),
-                            SizedBox(width: 20),
-                            Expanded(
-                                child: DashboardCard(
-                                    title: "Orders", value: "567")),
-                          ],
-                        ),
+                        child: RevenueCards(),
                       ),
                       Row(
                         children: [
