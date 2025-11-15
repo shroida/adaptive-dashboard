@@ -13,56 +13,67 @@ class MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(
-        child: DrawerMenu(),
+      endDrawer: const SizedBox(
+        // SIDEBAR drawer
+        width: 280,
+        child: Drawer(
+          child: SideBar(),
+        ),
       ),
+      drawer: const Drawer(child: DrawerMenu()),
       appBar: AppBar(
         title: const HeaderMiddleWidget(),
         leading: Builder(
           builder: (context) {
             return IconButton(
               icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
+              onPressed: () => Scaffold.of(context).openDrawer(),
             );
           },
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(18.0),
-        child: Row(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
           children: [
-            Expanded(
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: RevenueCards(),
-                  ),
-                  SizedBox(height: 20),
-                  Expanded(
-                    flex: 1,
-                    child: ConversionCards(),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Row(
-                      children: [
-                        Expanded(child: BarChartWidget()),
-                        SizedBox(width: 20),
-                        Expanded(child: LineChartWidget()),
-                      ],
-                    ),
+            const RevenueCards(),
+            const SizedBox(height: 20),
+            const ConversionCards(),
+            const SizedBox(height: 20),
+            Container(
+              height: 250,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF0F0F0),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
                   ),
                 ],
               ),
+              child: const BarChartWidget(),
             ),
-            SizedBox(width: 20),
-            SizedBox(
-              width: 300,
-              child: SideBar(),
+            const SizedBox(height: 20),
+            Container(
+              height: 250,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF0F0F0),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: const LineChartWidget(),
             ),
+            const SizedBox(height: 30),
           ],
         ),
       ),

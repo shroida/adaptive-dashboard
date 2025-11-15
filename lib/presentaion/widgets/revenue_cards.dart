@@ -10,8 +10,7 @@ class RevenueCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(
-            child: const DashboardCard(title: "Revenue", value: "\$12,345")),
+        Expanded(child: DashboardCard(title: "Revenue", value: "\$12,345")),
         SizedBox(width: 20),
         Expanded(child: DashboardCard(title: "Users", value: "1,234")),
         SizedBox(width: 20),
