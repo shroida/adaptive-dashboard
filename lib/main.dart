@@ -1,4 +1,4 @@
-import 'package:adaptive_dashboard/presentaion/views/dashboard_view.dart';
+import 'package:adaptive_dashboard/presentaion/view/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
