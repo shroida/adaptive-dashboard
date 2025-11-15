@@ -27,20 +27,34 @@ class DesktopLayout extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 40),
+
                     const CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.blueGrey,
                     ),
                     const SizedBox(height: 10),
+
                     const Text(
                       "Muhammad Walied",
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 20),
+
                     const Divider(),
+
+                    drawerItem(Icons.dashboard, "Dashboard", isSelected: true),
+                    drawerItem(Icons.person, "Users"),
+                    drawerItem(Icons.settings, "Settings"),
+                    drawerItem(Icons.message, "Messages"),
+                    drawerItem(Icons.notifications, "Notifications"),
+
                     const Spacer(),
+
                     const Divider(),
+
+                    // ---------- LOGOUT ----------
+                    drawerItem(Icons.logout, "Logout"),
                     const SizedBox(height: 20),
                   ],
                 ),
