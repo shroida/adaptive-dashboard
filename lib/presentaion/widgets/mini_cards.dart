@@ -1,15 +1,16 @@
-// ---------------- MINI STATS CARD ----------------
 import 'package:flutter/material.dart';
 
 class MiniCard extends StatelessWidget {
   final String title;
   final String value;
   final IconData icon;
+  final double textScale;
 
   const MiniCard(
       {super.key,
       required this.title,
       required this.value,
+      this.textScale = 1.0,
       required this.icon});
 
   @override
@@ -32,11 +33,13 @@ class MiniCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(title, style: const TextStyle(color: Colors.grey)),
+              Text(title,
+                  style:
+                      TextStyle(fontSize: 16 * textScale, color: Colors.grey)),
               const SizedBox(height: 4),
               Text(value,
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                      fontSize: 16 * textScale, fontWeight: FontWeight.bold)),
             ],
           )
         ],
@@ -45,7 +48,6 @@ class MiniCard extends StatelessWidget {
   }
 }
 
-// ---------------- RECENT ACTIVITY ROW ----------------
 class ActivityRow extends StatelessWidget {
   final String activity;
   final String time;
