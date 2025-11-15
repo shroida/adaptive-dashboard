@@ -1,4 +1,5 @@
-import 'package:adaptive_dashboard/presentaion/view/desktop_layout.dart/desktop_layout.dart';
+import 'package:adaptive_dashboard/presentaion/view/desktop%20layout/desktop_layout.dart';
+import 'package:adaptive_dashboard/presentaion/view/tablet%20layout/tablet_layout.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/adaptive_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class DashboardViewState extends State<DashboardView> {
     return Scaffold(
         body: AdaptiveLayout(
       desktopLayout: (context) => const DesktopLayout(),
+      tabletLayout: (context) => const TabletLayout(),
     ));
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AdaptiveLayout extends StatelessWidget {
-  const AdaptiveLayout({super.key, required this.desktopLayout});
-  final WidgetBuilder desktopLayout;
+  const AdaptiveLayout(
+      {super.key, required this.desktopLayout, required this.tabletLayout});
+  final WidgetBuilder desktopLayout, tabletLayout;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -12,9 +13,7 @@ class AdaptiveLayout extends StatelessWidget {
         );
       }
       if (constraints.maxWidth < 1200) {
-        return const Center(
-          child: Text('Tablet'),
-        );
+        return tabletLayout(context);
       } else {
         return desktopLayout(context);
       }
