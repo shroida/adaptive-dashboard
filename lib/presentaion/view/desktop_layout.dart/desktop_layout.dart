@@ -20,26 +20,54 @@ class DesktopLayout extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 18.0, horizontal: 9.0),
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFF0F0F0), // Light Grey Card Background
-                    borderRadius: BorderRadius.all(Radius.circular(25)),
-                    boxShadow: [
-                      // Added Shadow
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 10,
-                        offset: Offset(0, 5),
-                      ),
-                    ],
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "MAIN DASHBOARD CONTENT",
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFF0F0F0), // Light Grey Card Background
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
+                      boxShadow: [
+                        // Added Shadow
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 10,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
                     ),
-                  ),
-                ),
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 30),
+                      child: const Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Team Overview',
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.w700),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(Icons.search),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  Icon(
+                                    Icons.notifications,
+                                  ),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  Icon(Icons.settings),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    )),
               )),
           Expanded(
               flex: 1,
