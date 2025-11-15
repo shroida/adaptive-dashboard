@@ -3,6 +3,7 @@ import 'package:adaptive_dashboard/presentaion/widgets/dashboard_card.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/drawer_menu.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/header_middle_widget.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/line_chart_widget.dart';
+import 'package:adaptive_dashboard/presentaion/widgets/mini_bar_chart_printer.dart';
 import 'package:adaptive_dashboard/presentaion/widgets/mini_cards.dart';
 import 'package:flutter/material.dart';
 
@@ -113,10 +114,10 @@ class DesktopLayout extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(18.0),
               child: Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFFF0F0F0),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                  boxShadow: [
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10,
@@ -124,16 +125,111 @@ class DesktopLayout extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: const Center(
-                  child: Text(
-                    "SIDEBAR\n(Widgets & Charts)",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  ),
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Sidebar Header
+                    const Text(
+                      "Dashboard Info",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+
+                    // Quick Stats Cards
+                    const SidebarStatCard(
+                      title: "Active Users",
+                      value: "856",
+                      color: Colors.blueAccent,
+                    ),
+                    const SizedBox(height: 12),
+                    const SidebarStatCard(
+                      title: "Pending Orders",
+                      value: "34",
+                      color: Colors.orangeAccent,
+                    ),
+                    const SizedBox(height: 12),
+                    const SidebarStatCard(
+                      title: "Revenue Today",
+                      value: "\$1,245",
+                      color: Colors.green,
+                    ),
+                    const SizedBox(height: 20),
+
+                    // Mini Chart Placeholder
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100],
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 5,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: CustomPaint(
+                          painter: MiniBarChartPainter(),
+                          child: const Center(
+                            child: Text(
+                              "Weekly Sales",
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
-          ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class SidebarStatCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final Color color;
+
+  const SidebarStatCard(
+      {super.key,
+      required this.title,
+      required this.value,
+      required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.black87,
+              )),
+          Text(value,
+              style: TextStyle(
+                  fontSize: 16, fontWeight: FontWeight.bold, color: color)),
         ],
       ),
     );
