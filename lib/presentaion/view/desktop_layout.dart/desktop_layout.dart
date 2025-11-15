@@ -19,7 +19,6 @@ class DesktopLayout extends StatelessWidget {
             child: DrawerMenu(),
           ),
 
-          // Main Dashboard
           Expanded(
             flex: 3,
             child: Padding(
@@ -45,7 +44,6 @@ class DesktopLayout extends StatelessWidget {
                     children: [
                       HeaderMiddleWidget(),
 
-                      // Top Cards
                       Expanded(
                         child: Row(
                           children: [
@@ -66,7 +64,7 @@ class DesktopLayout extends StatelessWidget {
 
                       SizedBox(height: 30),
 
-                      // Custom Charts
+                      
                       Expanded(
                         flex: 2,
                         child: Row(
