@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -10,6 +10,6 @@ class DashboardView extends StatefulWidget {
 class DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
-    return Text('Tab');
+    return Scaffold(body: Text('Tab'));
   }
 }
